@@ -1,0 +1,699 @@
+.square {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.square i {
+	position: absolute;
+	inset: 0;
+	border: 2px solid #000000;
+	transition: 0.5s;
+}
+
+.square i:nth-child(1) {
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+	animation: animate 6s linear infinite;
+}
+
+.square i:nth-child(2) {
+	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+	animation: animate 4s linear infinite;
+}
+
+.square i:nth-child(3) {
+	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+	animation: animate2 10s linear infinite;
+}
+
+.square:hover i {
+	border: 6px solid rgb(255, 255, 255);
+	filter: drop-shadow(0 0 20px #6E3482);
+}
+
+@keyframes animate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes animate2 {
+	0% {
+		transform: rotate(360deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Mali', sans-serif;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+body::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	z-index: -1;
+}
+
+.snowflake {
+	position: absolute;
+	color: #fff;
+	font-size: 18px;
+	pointer-events: none;
+	animation: fadeOut 1.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+	100% {
+		opacity: 0;
+		transform: translateY(-15px) scale(0.8);
+	}
+}
+
+.profile-container {
+	background-color: rgba(120, 120, 120, 0.5);
+	position: relative;
+	width: 100%;
+	max-width: 550px;
+	height: 100%;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgb(0, 0, 0);
+	border: 2px solid #ffffff;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	z-index: 1;
+}
+
+.profile-container:hover {
+	transform: perspective(600px) rotateX(20deg) rotateY(20deg);
+	box-shadow: 0 4px 50px #6E3482;
+}
+
+.banner {
+	height: 150px;
+	background-size: cover;
+	background-position: center;
+	filter: blur(3px);
+}
+
+.profile-info {
+	text-align: center;
+	padding: 5px;
+	position: relative;
+}
+
+.profile-pic {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: 4px solid rgb(255, 255, 255);
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: -60px;
+	left: 18%;
+	transform: translateX(-50%);
+}
+
+.profile-frame {
+	width: 135px;
+	height: 135px;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: -68px;
+	left: 18%;
+	transform: translateX(-50%);
+}
+
+.profile-name {
+	position: absolute;
+	color: rgb(255, 255, 255);
+	font-size: 24px;
+	font-weight: bold;
+	top: -28%;
+	left: 35%;
+}
+
+.profile-description {
+	position: absolute;
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+	top: -7%;
+	left: 35%;
+}
+
+.social {
+	position: absolute;
+	left: 35%;
+	top: 12%;
+}
+
+.card-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 0 20px;
+	margin-top: 30px;
+}
+
+.card-button1, .card-button2 {
+	display: flex;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	padding: 15px;
+	color: #ffffff;
+	text-decoration: none;
+	width: 48%;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	border: 2px solid #ffffff;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card-button1 img, .card-button2 img {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	border-radius: 40%;
+}
+
+.card-button1 .content, .card-button2 .content {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-button1 .title, .card-button2 .title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.card-button1 .link, .card-button2 .link {
+	color: #c2c2c2;
+	text-decoration: none;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card-button1 .link:hover, .card-button2 .link:hover {
+	text-decoration: none;
+}
+
+.card-button1::after, .card-button2::after {
+	content: '>>';
+	margin-left: auto;
+	font-size: 14px;
+}
+
+.card-button1:hover {
+	transform: perspective(600px) rotateX(10deg) rotateY(5deg);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-button2:hover {
+	transform: perspective(600px) rotateX(-5deg) rotateY(-10deg);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.name-button1 {
+	border-radius: 10px;
+	color: #ffffff;
+	text-decoration: none;
+	border: 1px solid #ffffff;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.name-button2 {
+	border-radius: 10px;
+	color: #ffffff;
+	text-decoration: none;
+	border: 1px solid #ffffff;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.name-button1:hover {
+	transform: perspective(600px) rotateX(10deg) rotateY(10deg);
+}
+
+.name-button2:hover {
+	transform: perspective(600px) rotateX(-10deg) rotateY(-10deg);
+}
+
+.favorite-songs {
+	text-align: center;
+	font-size: 18px;
+	color: #ffffff;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+.card-song {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	width: 100%;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: background-color 0.3s ease;
+}
+
+.card-song:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.player-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 10px;
+	width: 80%;
+	max-width: 500px;
+	margin: auto;
+	box-shadow: 0 4px 10px #6E3482;
+}
+
+.controls {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+button {
+	color: rgb(0, 0, 0);
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+#progressBar {
+	width: 100%;
+	height: 10px;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.volume-container {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-top: 10px;
+}
+
+.volume-container span {
+	font-size: 14px;
+}
+
+.progress-container {
+	width: 95%;
+	background: #ffffff;
+	height: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top: 8px;
+}
+
+.time-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 6px;
+	color: white;
+}
+
+.card-progress {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 70px;
+	width: 100%;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: background-color 0.3s ease;
+}
+
+.card-progress:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-progress:hover .progress-container {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+#playPauseBtn {
+	position: absolute;
+	top: 3%;
+	left: 5px;
+	background: none;
+	color: #333333;
+	border: none;
+	padding: 0px 2px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.volume-buttons {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.volume-buttons button {
+	background: none;
+	color: #120d08;
+	border: none;
+	padding: 5px 0px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.favorite-songs {
+	font-size: 18px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	max-width: 400px;
+	min-width: 100px;
+	text-align: center;
+	color: white;
+	transition: max-width 0.5s ease;
+}
+
+.social-icons a {
+	text-decoration: none;
+	margin: 0 10px;
+	font-size: 24px;
+	color: #666;
+}
+
+.icon-item {
+	position: relative;
+	display: inline-block;
+}
+
+.icon-item img {
+	display: block;
+	width: 30px;	
+	height: 30px;
+	cursor: pointer;
+}
+
+.tooltip {
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px;
+	position: absolute;
+	bottom: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	z-index: 1;
+	font-size: 12px;
+}
+
+.tooltip::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+
+.icon-item:hover .tooltip {
+	visibility: visible;
+}
+
+.card-container-song {
+	position: relative;
+}
+
+.bor-ste {
+	content: '';
+	position: absolute;
+	top: -22px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ffffff;
+}
+
+.card-container-song {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.card-ste {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+    width: 100%;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.image-ste {
+	width: 75px;
+	height: 75px;
+	color: rgb(18, 13, 8);
+	cursor: pointer;
+	background: none;
+	border-width: initial;
+	border-style: none;
+	border-color: initial;
+	border-image: initial;
+	border-radius: 15px;
+	margin-left: 12.5px;
+	object-fit: cover;
+	object-position: center;
+	border: 2px solid #ffffff;
+}
+
+.content-ste {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 2px 10px;
+	margin-left: 0px;
+}
+
+.name-ste {
+	margin-top: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 1px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.ste-buttons {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.ste-buttons button {
+	margin-top: 2.5px;
+	font-size: 12px;
+	background: rgba(0, 0, 0, 0.7);
+	border: 1px solid #fff;
+	color: #ffffff;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.card-container-song:hover .card-ste {
+    background-color: rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05);
+}
+
+.card-container-ste:active {
+	transform: scale(0.98);
+}
+
+.copy-rigth {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 100%;
+        max-width: 500px;
+        min-width: 400px;
+    }
+
+    .profile-frame {
+        width: 120px;
+        height: 120px;
+        top: -70px;
+    }
+
+    .profile-name {
+        position: absolute;
+        color: rgb(255, 255, 255);
+        font-size: 24px;
+        font-weight: bold;
+        top: -22%;
+        left: 35%;
+    }
+
+    .profile-description {
+        position: absolute;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        top: -9%;
+        left: 35%;
+    }
+
+    .social {
+        position: absolute;
+        left: 35%;
+        top: 3%;
+    }
+	
+	.icon-item img {
+	width: 25px;	
+	height: 25px;
+	cursor: pointer;
+}
+	
+	.icon-item {
+	position: relative;
+	display: inline-block;
+}
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+	.card-button1 {
+		width: 100%;
+	}
+	
+	.card-button2 {
+		width: 100%;
+	}
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+	.name-ste {
+		margin-top: 5px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #ffffff;
+	white-space: nowrap;
+}
+	.image-ste {
+	width: 75px;
+	height: 75px;
+	color: rgb(18, 13, 8);
+	cursor: pointer;
+	background: none;
+	border-width: initial;
+	border-style: none;
+	border-color: initial;
+	border-image: initial;
+	border-radius: 10px;
+	margin-left: 12.5px;
+	object-fit: cover;
+	object-position: center;
+	border: 2px solid #fff;
+}
+	.copy-rigth { 
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+	.ste-buttons button {
+		margin-top: 2px;
+		font-size: 12.5px;
+		border: 1px solid #fff;
+	}
+	
+	.favorite-songs {
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	max-width: 400px;
+	min-width: 100px;
+	text-align: center;
+	color: white;
+	transition: max-width 0.5s ease;
+}
+	
+}

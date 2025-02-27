@@ -1,0 +1,60 @@
+
+{
+    "songs":["ฝากดาว.mp3"],
+    "Namesongs":["กำลังเล่นเพลง ฝากดาว | Zesloy Studio"],
+
+    "favicon": "https://cdn.discordapp.com/avatars/1336030822452428842/826ae10b6359721e9cdc4277e78b5c5f.webp?size=100",
+    "titles": ["! ガスジー", "Zesloy Studio"],
+
+    "contact_name1": "FACEBOOK",
+    "contact_icon1": "./image/facebook.png",
+    "contact_link1": "https://www.facebook.com/x13y09z2551/",
+
+    "contact_name2": "DISCORD",
+    "contact_icon2": "./image/discordf.webp",
+    "contact_link2": "https://discord.gg/pCCdknE7Za",
+
+    "MyName": "! ガスジー",
+
+    "nameButton": "Click To Enter...",
+
+    "description": "ขอค่าส่องหน่อยได้ไหมอ่าา",
+
+    "backgroundBody": "./image/background.gif",
+
+    "Profile": "https://cdn.discordapp.com/avatars/1336030822452428842/826ae10b6359721e9cdc4277e78b5c5f.webp?size=80",
+
+    "Profileframe": "https://cdn.discordapp.com/avatar-decoration-presets/a_be111e4303d634c55500202a61656e0b.png?size=240&passthrough=true",
+
+    "ProfileframeBanner": "",
+
+    "BannerProfile": "./image/banner.gif",
+
+    "texts1": [
+        "ผู้ให้บริการเว็บไซต์ Bio ราคาถูก",
+        "สามารถติดต่อได้ที่ Discord"
+    ],
+
+    "texts2": [
+        "API รับซองอั่งเปา ฟรี",
+        "สามารถเอาได้ที่ Discord"
+    ],
+
+    "texts3": [
+        "BOT Discord ในราคาถูก?",
+        "มีให้เห็นถ้าซื้อกับ Zesloy Studio"
+    ],
+
+    "imageste": [
+        "./image/imagea.gif",
+        "./image/holo-spice-and-wolf.gif"
+    ],
+
+    "namebutton1": "DISCORD",
+    "LinkButton1": "https://discord.gg/pCCdknE7Za",
+
+    "namebutton2": "WEBSITE",
+    "LinkButton2": "https://zesloy.xyz"
+
+}
+
